@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+    {% block title %}
+        Sign Up! - {{ block.super }}
+    {% endblock %}
+{% block content %}
+    <br>
+    <h1 style="color:red;text-align:center">Sign Up!</h1><br>
+    <div class="jumbotron">
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-outline-info">Sign Up</button>
+        </form>
+        <small>Already have an Account?<a href="#">Login Here</a></small>
+    </div>
+
+{% endblock %}
